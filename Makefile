@@ -9,8 +9,8 @@ link2.o : link2.c
 	$(CC) -c link2.c
 
 clean :
-	rm linktest
-	rm main.o
-	rm link1.o
-	rm link2.o
+	rm -f linktest
+	rm -f main.o
+	rm -f link1.o
+	rm -f link2.o
 
