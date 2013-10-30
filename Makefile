@@ -1,4 +1,4 @@
-linktest : main.o link1.o link2.o
+game2 : main.o link1.o link2.o
 	$(CC) -o game2 -Wall main.o link1.o link2.o -L/usr/Allegro/lib/ -lallegro -lallegro_font -lallegro_ttf
 
 main.o : main.c
@@ -9,7 +9,7 @@ link2.o : link2.c
 	$(CC) -c link2.c
 
 clean :
-	rm -f linktest
+	rm -f game2
 	rm -f main.o
 	rm -f link1.o
 	rm -f link2.o
