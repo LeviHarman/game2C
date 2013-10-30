@@ -3,16 +3,10 @@
 #include <allegro5/allegro.h>
 #include "link1.h"
 #include "link2.h"
+#include "draw.h"
 
 const int SCREEN_W = 400;
 const int SCREEN_H = 400;
-
-void draw_bg_green(ALLEGRO_DISPLAY **display)
-{
-  al_set_target_backbuffer(*display);
-  al_clear_to_color(al_map_rgb(0,100,0));
-  al_flip_display();
-}
 
 int main(void)
 {
