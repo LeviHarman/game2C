@@ -1,5 +1,5 @@
 game2 : main.o link1.o link2.o draw.o
-	$(CC) -o game2 -Wall main.o link1.o link2.o draw.o -L/usr/Allegro/lib/ -lallegro -lallegro_font -lallegro_ttf
+	$(CC) -o game2 -Wall main.o link1.o link2.o draw.o -L/usr/Allegro/lib/ -lallegro -lallegro_font -lallegro_ttf -lallegro_primitives
 
 main.o : main.c
 	$(CC) -c main.c -I/usr/Allegro/include/

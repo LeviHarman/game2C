@@ -1,3 +1,4 @@
+
 #include <allegro5/allegro.h>
 
 int returnas5()
