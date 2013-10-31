@@ -1,4 +1,5 @@
 
-void draw_bg_green(ALLEGRO_DISPLAY **display);
-void draw_square(ALLEGRO_DISPLAY **display);
+void draw_bg_green();
+void draw_square();
+void draw_main(ALLEGRO_DISPLAY **display);
 
