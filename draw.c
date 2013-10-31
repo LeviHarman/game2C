@@ -15,7 +15,7 @@ void draw_bg_green(ALLEGRO_DISPLAY **display)
 void draw_square(ALLEGRO_DISPLAY **display)
 {
   al_set_target_backbuffer(*display);
-  al_draw_filled_rectangle(2.5, 3.5, 5.5, 5.5, al_map_rgb(50,0,0));
+  al_draw_filled_rectangle(2.5, 30.5, 55, 55, al_map_rgb(50,0,0));
   al_flip_display();
 }
 
