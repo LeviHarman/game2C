@@ -19,13 +19,7 @@ int main(void)
   
   ALLEGRO_DISPLAY *display = al_create_display(SCREEN_W, SCREEN_H);
 
-  draw_square(&display);
-  
-  al_rest(3.0);
-
-  draw_bg_green(&display);
-
-  al_rest(3.0);
+  draw_main(&display);
 
   al_destroy_display(display);
   
