@@ -49,16 +49,16 @@ void draw_triangle()
   int tp3[2]; //top triangle point 3 (bottom right)
   
   //Algorithm for calculating top triangles first point (top)
-  tp1[0] = x1;  //doesnt change
-  tp1[1] = x2;  //doesn't change
+  tp1[0] = p1[0];  //doesnt change
+  tp1[1] = p2[0];  //doesn't change
 
   //Algorithm for calculating top triangles second point (bottom left)
-  tp2[1] = y2 / 2;      //always same as y3
+  tp2[1] = p2[1] / 2;      //always same as y3
   tp2[0] = tp2[1] / 2;  //x2 and x3 always add up to 400 x2 gets larger as the triangle gets smaller
 
   //Algorithm for calculating top triangles third point (bottom right)
-  tp3[0] = 400 - tx2;   //x2 and x3 always add up to 400 x3 gets smaller as the triangle gets smaller
-  tp3[1] = ty2;         //always same as y2
+  tp3[0] = 400 - tp2[0];   //x2 and x3 always add up to 400 x3 gets smaller as the triangle gets smaller
+  tp3[1] = tp2[1];         //always same as y2
 
   al_draw_filled_triangle(tp1[0], tp1[1], tp2[0], tp2[1], tp3[0], tp3[1], al_map_rgb(50,50,50));
 }
