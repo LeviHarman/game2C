@@ -67,23 +67,46 @@ void draw_triangle()
    * bottom left triangle
    */
 
-  int blp1[2]; //bottom left triangle point 1 (top)
-  int blp2[2]; //bottom left triangle point 2 (bottom left)
-  int blp3[2]; //bottom left triangle point 3 (bottom right)
+  int blp1[2];  //bottom left triangle point 1 (top)
+  int blp2[2];  //bottom left triangle point 2 (bottom left)
+  int blp3[2];  //bottom left triangle point 3 (bottom right)
   
   //Algorithm for calculating top triangles first point (top)
-  blp1[0] = tp2[0];  
-  blp1[1] = tp2[1];  
+  blp1[0] = tp2[0];  //same as the bottom left x axis of the top triangle (tp2[0])
+  blp1[1] = tp2[1];  //same as the bottom left y axis of the top triangle (tp2[1])
 
   //Algorithm for calculating top triangles second point (bottom left)
-  blp2[1] = p2[1];
-  blp2[0] = p2[0];
+  blp2[1] = p2[1];  //same as the initial triangle
+  blp2[0] = p2[0];  //same as the initial triangle
 
   //Algorithm for calculating top triangles third point (bottom right)
-  blp3[0] = p3[1]/2;   //p2[0] and p3[0] always add up to 400 x3 gets smaller as the triangle gets smaller
-  blp3[1] = p3[0];         //always same as p2[1]
+  blp3[0] = p3[0]/2;  //half as big as point 3 x axis (p3[0] / 2)
+  blp3[1] = blp2[1];  //always same as blp2[1]
 
   al_draw_filled_triangle(blp1[0], blp1[1], blp2[0], blp2[1], blp3[0], blp3[1], al_map_rgb(50,50,50));
+
+
+  /*
+   * bottom right triangle
+   */
+
+  int brp1[2];  //bottom right triangle point 1 (top)
+  int brp2[2];  //bottom right triangle point 2 (bottom left)
+  int brp3[2];  //bottom right triangle point 3 (bottom right)
+  
+  //Algorithm for calculating top triangles first point (top)
+  brp1[0] = tp3[0];
+  brp1[1] = tp3[1];
+
+  //Algorithm for calculating top triangles second point (bottom left)
+  brp2[1] = blp3[1];
+  brp2[0] = blp3[0];
+
+  //Algorithm for calculating top triangles third point (bottom right)
+  brp3[0] = p3[0];
+  brp3[1] = p3[1];
+
+  al_draw_filled_triangle(brp1[0], brp1[1], brp2[0], brp2[1], brp3[0], brp3[1], al_map_rgb(50,50,50));  
 
 }
 
