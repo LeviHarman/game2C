@@ -61,6 +61,30 @@ void draw_triangle()
   tp3[1] = tp2[1];         //always same as p2[1]
 
   al_draw_filled_triangle(tp1[0], tp1[1], tp2[0], tp2[1], tp3[0], tp3[1], al_map_rgb(50,50,50));
+
+
+  /*
+   * bottom left triangle
+   */
+
+  int blp1[2]; //bottom left triangle point 1 (top)
+  int blp2[2]; //bottom left triangle point 2 (bottom left)
+  int blp3[2]; //bottom left triangle point 3 (bottom right)
+  
+  //Algorithm for calculating top triangles first point (top)
+  blp1[0] = tp2[0];  
+  blp1[1] = tp2[1];  
+
+  //Algorithm for calculating top triangles second point (bottom left)
+  blp2[1] = p2[1];
+  blp2[0] = p2[0];
+
+  //Algorithm for calculating top triangles third point (bottom right)
+  blp3[0] = p3[1]/2;   //p2[0] and p3[0] always add up to 400 x3 gets smaller as the triangle gets smaller
+  blp3[1] = p3[0];         //always same as p2[1]
+
+  al_draw_filled_triangle(blp1[0], blp1[1], blp2[0], blp2[1], blp3[0], blp3[1], al_map_rgb(50,50,50));
+
 }
 
 void draw_main(ALLEGRO_DISPLAY **display)
@@ -77,6 +101,7 @@ void draw_main(ALLEGRO_DISPLAY **display)
 
   draw_triangle();
   al_flip_display();
+
   al_rest(2.0);
 }
 
